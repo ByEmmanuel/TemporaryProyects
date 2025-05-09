@@ -23,11 +23,11 @@ public:
     double precio;
     int stock;
 
-    // Constructor
+    // constructor
     Prenda(string nombre, int id, double precio, int stock)
         : nombre(nombre), id(id), precio(precio), stock(stock) {}
 
-    // Método para mostrar información
+    // Metodo para mostrar informacion
     void mostrarInfo() const {
         cout << "ID: " << id << " | Nombre: " << nombre
              << " | Precio: $" << fixed << setprecision(2) << precio
@@ -46,7 +46,7 @@ public:
     Ticket(const Prenda& prenda, int cantidad)
         : prenda(prenda), cantidad(cantidad), total(prenda.precio * cantidad) {}
 
-    // Método para mostrar información del ticket
+    // Mostrar info
     void mostrarInfo() const {
         cout << "Ticket para: " << prenda.nombre
              << " | Cantidad: " << cantidad
@@ -57,8 +57,8 @@ public:
 // Clase Almacen
 class Almacen {
 private:
-    vector<Prenda> arrayDePrendas; // Inventario dinámico
-    const size_t capacidadMaxima = CANTIDADPRENDAS; // Límite máximo
+    vector<Prenda> arrayDePrendas; // Inventario dinamico
+    const size_t capacidadMaxima = CANTIDADPRENDAS; // Limite de prendas de el almacen
 
 public:
     // Constructor
@@ -73,7 +73,7 @@ public:
         return false; // Almacen lleno
     }
 
-    // Método para modificar stock
+    // Metodo para modificar stock
     bool modificarStock(int id, int nuevoStock) {
         for (auto& prenda : arrayDePrendas) {
             if (prenda.id == id) {
@@ -84,7 +84,7 @@ public:
         return false; // Prenda no encontrada
     }
 
-    // Método para obtener prenda por ID
+    // obtener prenda por ID
     Prenda* getPrenda(int id) {
         for (auto& prenda : arrayDePrendas) {
             if (prenda.id == id) {
@@ -94,7 +94,7 @@ public:
         return nullptr; // Prenda no encontrada
     }
 
-    // Método para mostrar inventario
+    // mostrar inventario
     void mostrarInventario() const {
         cout << "\nInventario del Almacen:\n";
         for (const auto& prenda : arrayDePrendas) {
@@ -102,7 +102,7 @@ public:
         }
     }
 
-    // Método para obtener el inventario completo
+    // obtener inventario completo
     const vector<Prenda>& getInventario() const {
         return arrayDePrendas;
     }
@@ -118,22 +118,23 @@ protected:
     int ticketsUsados = 0; // Contador de tickets usados
 
 public:
-    // Constructor
-    Persona(string nombre, int id, string contacto): nombre(nombre), id(id), contacto(contacto), arrayDeTickets(arrayDeTickets){};
+    // Constructor 
+    Persona(string nombre, int id, string contacto)
+        : nombre(nombre), id(id), contacto(contacto), arrayDeTickets(arrayDeTickets) {}
 
     // Destructor virtual
     virtual ~Persona() = default;
 
-    // Métodos virtuales puros
+    // virtuales puros
     virtual void realizarAccion(Almacen& almacen) = 0;
     virtual string getRol() const = 0;
 
-    // Métodos getters
+    // getters
     string getNombre() const { return nombre; }
     int getId() const { return id; }
     string getContacto() const { return contacto; }
 
-    // Método para agregar un ticket
+    // Metodo para agregar un ticket
     bool agregarTicket(const Ticket& ticket) {
         if (ticketsUsados < 2) {
             arrayDeTickets[ticketsUsados] = ticket;
@@ -143,7 +144,7 @@ public:
         return false; // Límite de tickets alcanzado
     }
 
-    // Método para mostrar tickets
+    // mostrar tickets --> porque no mejor un for each?¿?¿?¿?¿?
     void mostrarTickets() const {
         cout << "Tickets de " << nombre << ":\n";
         for (int i = 0; i < ticketsUsados; i++) {
