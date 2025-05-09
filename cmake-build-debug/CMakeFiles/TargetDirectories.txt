@@ -1,0 +1,3 @@
+/home/pollofeliz/Workspace/ProyectoPOO3ro/cmake-build-debug/CMakeFiles/ProyectoPOO3ro.dir
+/home/pollofeliz/Workspace/ProyectoPOO3ro/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/pollofeliz/Workspace/ProyectoPOO3ro/cmake-build-debug/CMakeFiles/rebuild_cache.dir

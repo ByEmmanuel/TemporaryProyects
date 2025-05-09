@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/home/pollofeliz/Workspace/ProyectoPOO3ro/build",
+  "command": "/usr/bin/g++ -g -o CMakeFiles/ProyectoPOO3ro.dir/main.cpp.o -c /home/pollofeliz/Workspace/ProyectoPOO3ro/main.cpp",
+  "file": "/home/pollofeliz/Workspace/ProyectoPOO3ro/main.cpp",
+  "output": "CMakeFiles/ProyectoPOO3ro.dir/main.cpp.o"
+}
+]
